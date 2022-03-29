@@ -45,9 +45,7 @@ const gasify = (address, callback) => {
                     let sugguested = []
 
                     const data = response.body.results
-                    data.forEach((item) => {
-                        // console.log(item.name + ' | ' + item.vicinity)
-    
+                    data.forEach((item) => {    
                         const gdmatrix_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + geocode_data.latitude + ',' + geocode_data.longitude + '&destinations=place_id:' + item.place_id + '&key=' + config.api_authentication.google_apikey
         
                         request({ url: gdmatrix_url, json: true }, (error, response) => {
