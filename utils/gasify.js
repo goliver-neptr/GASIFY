@@ -31,7 +31,7 @@ const gasify = (address, callback) => {
             console.log('LOCATION: ' + geocode_data.place_name)
             console.log('----------------------------')
             
-            const gplaces_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=gas&location=' + geocode_data.latitude + ',' + geocode_data.longitude + '&radius=5000&type=gas_station&key=' + config.api_authentication.google_apikey
+            const gplaces_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?rankby=prominence&keyword=gas&location=' + geocode_data.latitude + ',' + geocode_data.longitude + '&radius=5000&type=gas_station&key=' + config.api_authentication.google_apikey
 
             request({ url: gplaces_url, json: true }, (error, response) => {
                 
@@ -46,7 +46,7 @@ const gasify = (address, callback) => {
 
                     const data = response.body.results
                     data.forEach((item) => {    
-                        const gdmatrix_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + geocode_data.latitude + ',' + geocode_data.longitude + '&destinations=place_id:' + item.place_id + '&key=' + config.api_authentication.google_apikey
+                        const gdmatrix_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?&origins=' + geocode_data.latitude + ',' + geocode_data.longitude + '&destinations=place_id:' + item.place_id + '&key=' + config.api_authentication.google_apikey
         
                         request({ url: gdmatrix_url, json: true }, (error, response) => {
                             if (error) {
@@ -59,7 +59,7 @@ const gasify = (address, callback) => {
                                 const gdmatrix_error = 'ZERO DISTANCE RESULTS. INVALID DESTINATIONS.'
                                 callback('GDMATRIX ERROR: ' + gdmatrix_error, undefined, undefined)
                             } else {
-                                console.log(item.name + ' | ' + response.body.rows[0].elements[0].distance.text + ' | ' + response.body.rows[0].elements[0].duration.text)
+                                console.log(item.name + ' | ' + response.body.rows[0].elements[0].distance.text + ' | ' + response.body.rows[0].elements[0].duration.text + ' | ' + item.vicinity)
                             }
                         })
                     })
