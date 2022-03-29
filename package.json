@@ -1,0 +1,22 @@
+{
+  "name": "gasify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goliver-neptr/GASIFY.git"
+  },
+  "author": "Gabriel Oliver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goliver-neptr/GASIFY/issues"
+  },
+  "homepage": "https://github.com/goliver-neptr/GASIFY#readme",
+  "dependencies": {
+    "postman-request": "^2.88.1-postman.31"
+  }
+}
