@@ -5,7 +5,7 @@ const gasify = require('./utils/gasify.js')
 const rawConfig = fs.readFileSync('./config.json')
 const config = JSON.parse(rawConfig)
 
-gasify('South Windsor', (error, response, optimalStation) => {
+gasify('ENTER LOCATION', (error, response, optimalStation) => {
     if (error || response == undefined) {
         console.log(error)
     } else {
