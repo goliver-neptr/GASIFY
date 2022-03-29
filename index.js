@@ -1,9 +1,4 @@
-const fs = require('fs')
-const request = require('postman-request')
 const gasify = require('./utils/gasify.js')
-
-const rawConfig = fs.readFileSync('./config.json')
-const config = JSON.parse(rawConfig)
 
 gasify('ENTER LOCATION', (error, response, optimalStation) => {
     if (error || response == undefined) {
