@@ -1,11 +1,23 @@
 const gasify = require('./utils/gasify.js')
 
-gasify('ENTER LOCATION', (error, response, optimalStation) => {
+gasify('94 Bourbon Street', (error, response) => {
     if (error || response == undefined) {
         console.log(error)
     } else {
-        console.log(response.place_name)
-        // console.log(optimalStation)
-        // optimalStation needs to be setup in gasify algorithm.
+
+        let stations = []
+
+        response.forEach((station) => {
+            var injectData = {
+                station_name : station.name,
+                station_address: station.vicinity,
+                station_rating : station.rating,
+                price_level : station.price_level,
+            }
+            stations.push(injectData)
+        })
+
+        console.log(stations)
+
     }
 })
