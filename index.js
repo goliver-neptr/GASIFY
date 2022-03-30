@@ -1,6 +1,6 @@
 const gasify = require('./utils/gasify.js')
 
-gasify('94 Bourbon Street', (error, response) => {
+gasify('LOCATION PLACEHOLDER', (error, response) => {
     if (error || response == undefined) {
         console.log(error)
     } else {
