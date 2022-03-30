@@ -1,6 +1,5 @@
 const request = require('postman-request')
 const fs = require('fs')
-const { Console } = require('console')
 
 const rawConfig = fs.readFileSync('config.json')
 const config = JSON.parse(rawConfig)
