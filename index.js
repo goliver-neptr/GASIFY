@@ -18,6 +18,5 @@ gasify('LOCATION PLACEHOLDER', (error, response) => {
         })
 
         console.log(stations)
-
     }
 })
