@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/goliver-neptr/GASIFY#readme",
   "dependencies": {
+    "config.json": "0.0.4",
     "postman-request": "^2.88.1-postman.31"
   }
 }

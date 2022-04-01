@@ -32,7 +32,7 @@ const gasify = (address, callback) => {
       console.log('----------------------------')
 
       const gplaces_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?rankby=prominence&radius=5000&keyword=gas&location=' + geocode_data.latitude + ',' + geocode_data.longitude + '&type=gas_station&key=' + config.api_authentication.google_apikey
-      
+
       request({ url: gplaces_url, json: true }, (error, response) => {
 
         if (error) {
@@ -42,7 +42,7 @@ const gasify = (address, callback) => {
           const gplaces_error = 'ZERO GAS STATION RESULTS.'
           callback('GPLACES ERROR: ' + gplaces_error, undefined)
         } else {
-          callback(undefined, response.body.results)
+          callback(undefined, response.body.results, geocode_data)
         }
       })
     }
