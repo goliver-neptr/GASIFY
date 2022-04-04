@@ -1,8 +1,8 @@
 {
   "name": "gasify",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "An API based gasoline search application.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/goliver-neptr/GASIFY.git"
   },
-  "author": "Gabriel Oliver",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goliver-neptr/GASIFY/issues"
   },
   "homepage": "https://github.com/goliver-neptr/GASIFY#readme",
   "dependencies": {
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
     "postman-request": "^2.88.1-postman.31"
   }
 }

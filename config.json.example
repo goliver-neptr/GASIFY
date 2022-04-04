@@ -1,6 +1,0 @@
-{
-    "api_authentication" : {
-        "mapbox_apikey" : "ENTER MAPBOX API",
-        "google_apikey" : "ENTER GOOGLE API"
-    }
-}
