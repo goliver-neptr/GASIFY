@@ -22,6 +22,8 @@ const getStations = (latitude, longitude, callback) => {
       
       response.body.results.forEach((station) => {
         let injectData = {
+          client_latitude: latitude,
+          client_longitude: longitude,
           station_name: station.name,
           station_address: station.vicinity,
           station_id: station.place_id,
