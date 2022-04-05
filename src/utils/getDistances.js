@@ -1,6 +1,7 @@
 const fs = require('fs')
 
 const request = require('postman-request')
+const converter = require('length-distance-converter')
 
 const rawData = fs.readFileSync('config.json')
 const config = JSON.parse(rawData)
@@ -26,7 +27,7 @@ const getDistances = (preStations, callback) => {
               station_address: station.station_address,
               station_rating: station.station_rating,
               price_level: station.station_price_level,
-              distance: parseFloat(res.body.rows[0].elements[0].distance.text), // kilometers
+              distance: converter.kmToMiles(parseFloat(res.body.rows[0].elements[0].distance.text)), // kilometers
               time: parseFloat(res.body.rows[0].elements[0].duration.text) // mins
             }
             resolve(stationInjectData)
