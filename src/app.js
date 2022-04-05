@@ -23,84 +23,70 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirPath))
 
 app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'GASIFY - Your Gasoline App.'
-    })
+  res.render('index', {
+    title: 'GASIFY - Your Gasoline App.'
+  })
 })
 
 app.get('/endpoint', (req, res) => {
-    if (!req.query.location) {
-        return res.send({
-            results: {},
-            error: 'No location was provided. Please enter a valid location.'
-        })
+  console.log(req.query)
+  if (!req.query.location) {
+    return res.send({
+      results: {},
+      error: 'No location was provided. Please enter a valid location.'
+    })
+  }
+
+  geocode(req.query.location, (error, { latitude, longitude, location } = {}) => {
+    if (error) {
+      return res.send({
+        results: {},
+        error
+      })
     }
 
-    geocode(req.query.location, (error, { latitude, longitude, location } = {}) => {
+    getStations(latitude, longitude, (error, preStations) => {
+      if (error) {
+        return res.send({
+          results: {},
+          error
+        })
+      }
+
+      getDistances(preStations, (error, stations) => {
         if (error) {
-            return res.send({
-                results: {},
-                error
-            })
+          return res.send({
+            results: {},
+            error
+          })
         }
 
-        getStations(latitude, longitude, (error, { stations } = {} ) => {
-            if (error) {
-                return res.send({
-                    results: {},
-                    error
-                })
-            } else if (stations == undefined) {
-                return res.send({
-                    results: {},
-                    error: 'Something went wrong. Stations value returned undefined.'
-                })
-            }
-
-            getDistances(stations, (error, newStations = {}) => {
-                if (error) {
-                    return res.send({
-                        results: {},
-                        error
-                    })
-                } else if (newStations == undefined) {
-                    return res.send({
-                        results: {},
-                        error: 'Something went wrong. newStations value returned undefined.'
-                    })
-                }
-
-                findOptimal(newStations, (error, stations, optimalStation) => {
-                    if (error) {
-                        return res.send({
-                            results: {},
-                            error
-                        })
-                    }
-                    
-                    res.send({
-                        results: {
-                            stations,
-                            optimalStation
-                        },
-                        error: undefined
-                    })
-                })
-
-            })
-
+        res.send({
+          results: {
+            client_Data: [{
+              latitude,
+              longitude,
+              location
+            }],
+            stations
+          },
+          error: undefined
         })
 
+      })
+
     })
+
+  })
 
 })
 
 app.get('*', (req, res) => {
-    res.render('404', {
-        title: 'Page Not Found.'
-    })
+  res.render('404', {
+    title: 'Page Not Found.'
+  })
 })
 
 app.listen(3000, () => {
-    console.log('Server running on port 3000.')
+  console.log('Server running on port 3000.')
 })
