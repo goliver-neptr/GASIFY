@@ -10,7 +10,7 @@ const getDistances = require('./utils/getDistances.js')
 const findOptimals = require('./utils/findOptimals.js')
 
 // define paths
-const publicDirPath = path.join(__dirname, '../pubic')
+const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
