@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) => {
     var outerDiv = document.getElementById('outerDiv');
     outerDiv.innerHTML = ''
     
-    fetch('http://localhost:3000/endpoint?location=' + location).then((response) => {
+    fetch('/endpoint?location=' + location).then((response) => {
     response.json().then((data) => {
         if(data.error) {
             var div = document.createElement('div');
