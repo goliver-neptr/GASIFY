@@ -1,3 +1,124 @@
-h1 {
-    color: red !important;
+.top {
+    min-width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.left {
+    background-color: #2541B2;
+    height: 100vh;
+    flex-basis: 60%;
+    order: 1;
+}
+
+.top-heading {
+    order: 1;
+}
+
+form {
+    order: 2;
+}
+
+.right .innerDiv {
+    background-color: #fff;
+    padding: 4rem 2rem;    
+    border-radius: 5%;
+    width: 400px;
+    min-height: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+@media (min-width: 900px) {
+    .top {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+.results {
+    padding: 5%;
+    background-color: #03256C;
+    border-radius: 10%;
+}
+
+.right {
+    flex-basis: 40%;
+    order: 2;
+}
+
+.gasify-heading {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #fff;
+}
+
+.gasify-subheading {
+    font-family: 'Telex', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #fff;
+}
+
+form label {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300; 
+    color: #000;
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    text-transform: lowercase;
+}
+
+form input {
+    width: 13rem;
+    height: 3rem;
+    font-family: 'Telex', sans-serif;
+    font-size: 13px;
+    border: 3px dashed #06BEE1;
+    border-radius: 10%;
+    text-align: center;
+}
+
+form {
+    background-color: #03256C;
+    padding: 3%;    
+    border-radius: 5%;
+    text-align: center;
+    width: 500px;
+}
+
+form .innerDiv {
+    background-color: #fff;
+    padding: 3rem 7rem;    
+    border-radius: 5%;
+}
+
+form .btn-submit {
+    background-color: #03256C;
+    padding: 15px 25px;
+    font-size: 15px;
+    font-family: 'Telex', sans-serif;
+    color: #fff;
+    border-radius: 10%;
+    margin-top: 1rem;
+}
+
+form .btn-submit:hover {
+    color: #fff
 }
