@@ -15,6 +15,11 @@ form.addEventListener('submit', (e) => {
     
     fetch(endpointURL + location).then((response) => {
     response.json().then((data) => {
+
+        var clientDataDiv = document.getElementById('request-info');
+
+        clientDataDiv.innerHTML = `<p>` + data.results.client_Data[0].latitude + data.results.client_Data[0].longitude + `</p>`
+        
         if(data.error) {
             var div = document.createElement('div');
             div.innerHTML = data.error;
