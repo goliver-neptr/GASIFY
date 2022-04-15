@@ -18,8 +18,11 @@ form.addEventListener('submit', (e) => {
 
         var clientDataDiv = document.getElementById('request-info');
 
-        clientDataDiv.innerHTML = `<p>` + data.results.client_Data[0].latitude + data.results.client_Data[0].longitude + `</p>`
-        
+        clientDataDiv.innerHTML = `<div class="request-info"'>
+            <p class="latitude">` + data.results.client_Data[0].latitude + `</p>
+            <p class="longitude">` + data.results.client_Data[0].longitude + `</p>
+            <p class="location">` + data.results.client_Data[0].location + `</p>`
+                    
         if(data.error) {
             var div = document.createElement('div');
             div.innerHTML = data.error;
@@ -32,7 +35,8 @@ form.addEventListener('submit', (e) => {
                 
                 var div = document.createElement('div');
                 div.innerHTML = `
-<div class="accordion-item">								     <h2 class="accordion-header" id="heading` + index + `">
+<div class="accordion-item">
+    <h2 class="accordion-header" id="heading` + index + `">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse` + index + `" aria-expanded="false" aria-controls="collapse` + index + `">` + station.station_name + `
 	    </button>
 	</h2>
