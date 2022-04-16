@@ -21,6 +21,7 @@
     "express": "^4.17.3",
     "hbs": "^4.2.0",
     "length-distance-converter": "^1.0.2",
+    "parse-address": "^1.1.2",
     "postman-request": "^2.88.1-postman.31"
   }
 }
