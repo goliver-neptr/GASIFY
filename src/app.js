@@ -9,6 +9,9 @@ const getStations = require('./utils/getStations.js')
 const getDistances = require('./utils/getDistances.js')
 const findOptimals = require('./utils/findOptimals.js')
 
+const rawData = fs.readFileSync('config.json')
+const config = JSON.parse(rawData)
+
 // define paths
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -96,6 +99,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000.')
+app.listen(config.port, () => {
+    console.log('Server running on port ' + config.port + '.')
 })
