@@ -1,0 +1,8 @@
+{
+    "api_authentication" : {
+        "mapbox_apikey" : "",
+        "google_apikey" : ""
+    },
+
+    "port" : 80
+}
