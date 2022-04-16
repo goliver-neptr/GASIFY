@@ -15,20 +15,21 @@ form.addEventListener('submit', (e) => {
     
     fetch(endpointURL + location).then((response) => {
     response.json().then((data) => {
-
-        var clientDataDiv = document.getElementById('request-info');
-
-        clientDataDiv.innerHTML = `<div class="request-info"'>
-            <p class="latitude">` + data.results.client_Data[0].latitude + `</p>
-            <p class="longitude">` + data.results.client_Data[0].longitude + `</p>
-            <p class="location">` + data.results.client_Data[0].location + `</p>`
                     
         if(data.error) {
-            var div = document.createElement('div');
-            div.innerHTML = data.error;
-            div.style.color = 'red';
-            document.getElementById('accordionExample').appendChild(div);
+            var errorDiv = document.createElement('div');
+            errorDiv.innerHTML = data.error
+            errorDiv.style.color = 'red';
+            document.getElementById('accordionExample').appendChild(errorDiv);
+
         } else {
+            var clientDataDiv = document.getElementById('request-info');
+
+            clientDataDiv.innerHTML = `<div class="request-info"'>
+                <p class="latitude">` + data.results.client_Data[0].latitude + `</p>
+                <p class="longitude">` + data.results.client_Data[0].longitude + `</p>
+                <p class="location">` + data.results.client_Data[0].location + `</p>`
+  
             var index = 0
 
             var optimalDiv = document.createElement('div');
