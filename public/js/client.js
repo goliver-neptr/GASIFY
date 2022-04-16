@@ -37,7 +37,7 @@ form.addEventListener('submit', (e) => {
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingLTIME">
                     <span class="optimalHeader">Fastest Station</span>
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLTIME" aria-expanded="false" aria-controls="flush-collapseLTIME"><span class="station_name">`+ data.results.optimalStations.lowTime.station_name + ` on ` + data.results.optimalStations.lowTime.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowTime.time + ` min away</span></button>
+                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLTIME" aria-expanded="false" aria-controls="flush-collapseLTIME"><span class="station_name">`+ data.results.optimalStations.lowTime.station_name + ` on ` + data.results.optimalStations.lowTime.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowTime.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseLTIME" class="accordion-collapse collapse" aria-labelledby="flush-headingLTIME" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
@@ -64,7 +64,7 @@ form.addEventListener('submit', (e) => {
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingLDIST">
                     <span class="optimalHeader">Closest Station</span>
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLDIST" aria-expanded="false" aria-controls="flush-collapseLDIST"><span class="station_name">`+ data.results.optimalStations.lowDistance.station_name + ` on ` + data.results.optimalStations.lowDistance.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowDistance.time + ` min away</span></button>
+                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLDIST" aria-expanded="false" aria-controls="flush-collapseLDIST"><span class="station_name">`+ data.results.optimalStations.lowDistance.station_name + ` on ` + data.results.optimalStations.lowDistance.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowDistance.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseLDIST" class="accordion-collapse collapse" aria-labelledby="flush-headingLDIST" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
@@ -91,7 +91,7 @@ form.addEventListener('submit', (e) => {
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingHRATE">
                     <span class="optimalHeader">Highest Rated Station</span>
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseHRATE" aria-expanded="false" aria-controls="flush-collapseHRATE"><span class="station_name">`+ data.results.optimalStations.maxRating.station_name + ` on ` + data.results.optimalStations.maxRating.station_street_name + `</span><span class="duration">` + data.results.optimalStations.maxRating.time + ` min away</span></button>
+                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseHRATE" aria-expanded="false" aria-controls="flush-collapseHRATE"><span class="station_name">`+ data.results.optimalStations.maxRating.station_name + ` on ` + data.results.optimalStations.maxRating.station_street_name + `</span><span class="duration">` + data.results.optimalStations.maxRating.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseHRATE" class="accordion-collapse collapse" aria-labelledby="flush-headingHRATE" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">

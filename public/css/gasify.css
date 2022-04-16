@@ -170,6 +170,18 @@ form .btn-submit:hover {
     justify-content: flex-end;
 }
 
+.optimal {
+    padding: 50px;
+    border-radius: 5% !important;
+    background-color: #03256C !important;
+    color:#FFF !important;
+    text-decoration: none !important;
+    border: hidden !important;
+    box-shadow: 0px !important;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .station_name {
     flex: 1;
 }
@@ -185,7 +197,6 @@ form .btn-submit:hover {
     border: hidden !important;
     box-shadow: 0px !important;
 }
-
 
 .optimalHeader {
     display: block;
