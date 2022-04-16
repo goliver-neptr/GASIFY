@@ -1,6 +1,7 @@
 const fs = require('fs')
 
 const request = require('postman-request')
+const parser = require('parse-address'); 
 
 const rawData = fs.readFileSync('config.json')
 const config = JSON.parse(rawData)
@@ -21,11 +22,15 @@ const getStations = (latitude, longitude, callback) => {
       let stations = []
       
       response.body.results.forEach((station) => {
+
+        let parsedAddress = parser.parseLocation(station.vicinity)
+
         let injectData = {
           client_latitude: latitude,
           client_longitude: longitude,
           station_name: station.name,
           station_address: station.vicinity,
+          station_street_name: parsedAddress.street + ' ' + parsedAddress.type,
           station_id: station.place_id,
           station_rating: station.rating,
           station_price_level: station.price_level

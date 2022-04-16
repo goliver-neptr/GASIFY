@@ -186,3 +186,8 @@ form .btn-submit:hover {
     box-shadow: 0px !important;
 }
 
+
+.optimalHeader {
+    display: block;
+    font-size: 15px;
+}

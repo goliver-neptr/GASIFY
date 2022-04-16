@@ -25,6 +25,7 @@ const getDistances = (preStations, callback) => {
             const stationInjectData = {
               station_name: station.station_name,
               station_address: station.station_address,
+              station_street_name: station.station_street_name,
               station_rating: station.station_rating,
               price_level: station.station_price_level,
               distance: converter.kmToMiles(parseFloat(res.body.rows[0].elements[0].distance.text)), // kilometers
