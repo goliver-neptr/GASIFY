@@ -34,14 +34,13 @@ form.addEventListener('submit', (e) => {
                 index = index + 1
                 
                 var div = document.createElement('div');
-                div.innerHTML = `
-<div class="accordion-item">
-    <h2 class="accordion-header" id="heading` + index + `">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse` + index + `" aria-expanded="false" aria-controls="collapse` + index + `">` + station.station_name + `
-	    </button>
-	</h2>
-	<div id="collapse` + index + `" class="accordion-collapse collapse" aria-labelledby="heading` + index + `" data-bs-parent="#accordionExample">
-	    <div class="accordion-body"> 
+                div.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
+<div class="accordion-item my-2">
+    <h2 class="accordion-header" id="flush-heading` + index + `">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse` + index + `" aria-expanded="false" aria-controls="flush-collapse` + index + `"><span class="station_name">`+ station.station_name +`</span><span class="duration">` + station.time + ` min away</span></button>
+    </h2>
+    <div id="flush-collapse` + index + `" class="accordion-collapse collapse" aria-labelledby="flush-heading` + index + `" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
             <p class="result-header">Station Address</p> 
             <p class="result-address">` + station.station_address + `</p> 
             <br>
@@ -57,8 +56,10 @@ form.addEventListener('submit', (e) => {
             <p class="result-header">Price Level</p>
             <p class="result-plevel">` + station.price_level + `</p>
         </div>
-	</div>
-</div>`
+    </div>
+</div>
+</div>
+`
                     document.getElementById('accordionExample').appendChild(div);
             })
          }
