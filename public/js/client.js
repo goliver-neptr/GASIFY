@@ -15,7 +15,7 @@ form.addEventListener('submit', (e) => {
     
     fetch(endpointURL + location).then((response) => {
     response.json().then((data) => {
-                    
+
         if(data.error) {
             var errorDiv = document.createElement('div');
             errorDiv.innerHTML = data.error
