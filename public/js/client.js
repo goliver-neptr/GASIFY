@@ -13,27 +13,27 @@ form.addEventListener('submit', (e) => {
     document.getElementById('accordionExample').innerHTML = '';
     document.getElementById('no-results').innerHTML = '';
     document.getElementById('errorDiv').innerHTML = '';
-    
+
     fetch(endpointURL + location).then((response) => {
-    response.json().then((data) => {
+        response.json().then((data) => {
 
-        if(data.error) {
-            var errorDiv = document.createElement('div');
-            errorDiv.innerHTML = data.error
-            document.getElementById('errorDiv').appendChild(errorDiv);
+            if (data.error) {
+                var errorDiv = document.createElement('div');
+                errorDiv.innerHTML = data.error
+                document.getElementById('errorDiv').appendChild(errorDiv);
 
-        } else {
-            var clientDataDiv = document.getElementById('request-info');
+            } else {
+                var clientDataDiv = document.getElementById('request-info');
 
-            clientDataDiv.innerHTML = `<div class="request-info"'>
+                clientDataDiv.innerHTML = `<div class="request-info"'>
                 <p class="latitude">` + data.results.client_Data[0].latitude + `</p>
                 <p class="longitude">` + data.results.client_Data[0].longitude + `</p>
                 <p class="location">` + data.results.client_Data[0].location + `</p>`
-  
-            var index = 0
 
-            var optimalDiv = document.createElement('div');
-            optimalDiv.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
+                var index = 0
+
+                var optimalDiv = document.createElement('div');
+                optimalDiv.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingLTIME">
                     <hr>
@@ -123,16 +123,16 @@ form.addEventListener('submit', (e) => {
             <p class="stationHeader" style="font-weight: 800; text-transform: uppercase;">All Stations</p>
             <hr>
             `
-            document.getElementById('accordionExample').appendChild(optimalDiv);
+                document.getElementById('accordionExample').appendChild(optimalDiv);
 
-            data.results.stations.forEach((station) => {
-                index = index + 1
-                
-                var div = document.createElement('div');
-                div.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
+                data.results.stations.forEach((station) => {
+                    index = index + 1
+
+                    var div = document.createElement('div');
+                    div.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
 <div class="accordion-item my-2">
     <h2 class="accordion-header" id="flush-heading` + index + `">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse` + index + `" aria-expanded="false" aria-controls="flush-collapse` + index + `"><span class="station_name">`+ station.station_name + ` on ` + station.station_street_name + `</span><span class="duration">` + station.time + ` min away</span></button>
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse` + index + `" aria-expanded="false" aria-controls="flush-collapse` + index + `"><span class="station_name">` + station.station_name + ` on ` + station.station_street_name + `</span><span class="duration">` + station.time + ` min away</span></button>
     </h2>
     <div id="flush-collapse` + index + `" class="accordion-collapse collapse" aria-labelledby="flush-heading` + index + `" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
@@ -156,8 +156,8 @@ form.addEventListener('submit', (e) => {
 </div>
 `
                     document.getElementById('accordionExample').appendChild(div);
-            })
-         }
+                })
+            }
+        })
     })
-})
 })

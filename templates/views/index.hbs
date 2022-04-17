@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		{{>head}}
-	</head>
-	<body>
-		<section class="top">
-			<div class="left">
-				<div class="top-heading">
-					<h1 class="gasify-heading">GASIFY</h1>
-					<p class="gasify-subheading">your gasoline app.</p>
-				</div>
-				<div class="container lleft">
-					<form id="input-form">
-						<div class="innerDiv">
-							<label class="input-label">Enter your location:</label>
-							<input class="location-input" placeholder="San Diego, California">
-							<button class="btn btn-submit">Submit</button>
-						</div>
-					</form>
-				</div>
+
+<head>
+	{{>head}}
+</head>
+
+<body>
+	<section class="top">
+		<div class="left">
+			<div class="top-heading">
+				<h1 class="gasify-heading">GASIFY</h1>
+				<p class="gasify-subheading">your gasoline app.</p>
 			</div>
-			<div class="right">
-				<div class="container">
-					<div class="results">
-						<h1 class="results-heading">Results</h1>
+			<div class="container lleft">
+				<form id="input-form">
+					<div class="innerDiv">
+						<label class="input-label">Enter your location:</label>
+						<input class="location-input" placeholder="San Diego, California">
+						<button class="btn btn-submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="right">
+			<div class="container">
+				<div class="results">
+					<h1 class="results-heading">Results</h1>
 
-						<div id="request-info" id="request-info">
+					<div id="request-info" id="request-info">
+					</div>
+
+					<div class="innerDiv">
+
+						<div class="no-results" id="no-results">
+							<p>No results. Send a location.</p>
 						</div>
-					
-						<div class="innerDiv">
 
-							<div class="no-results" id="no-results">
-								<p>No results. Send a location.</p>
-							</div>
+						<div id="errorDiv">
+						</div>
 
-							<div id="errorDiv">
-							</div>
-							
-							<div class="accordion mt-2 container" id="accordionExample">
-							</div>
+						<div class="accordion mt-2 container" id="accordionExample">
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		{{>foot}}
-	</body>
+		</div>
+	</section>
+	{{>foot}}
+</body>
+
 </html>
