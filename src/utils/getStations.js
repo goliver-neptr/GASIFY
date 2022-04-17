@@ -7,7 +7,7 @@ const rawData = fs.readFileSync('config.json')
 const config = JSON.parse(rawData)
 
 const getStations = (latitude, longitude, callback) => {
-  const gplaces_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?rankby=prominence&radius=5000&keyword=gas&location=' + latitude + ',' + longitude + '&type=gas_station&key=' + config.api_authentication.google_apikey
+  const gplaces_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?rankby=distance&keyword=gas&location=' + latitude + ',' + longitude + '&type=gas_station&key=' + config.api_authentication.google_apikey
 
   request({ url: gplaces_url, json: true }, (error, response) => {
 

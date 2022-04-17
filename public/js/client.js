@@ -68,7 +68,7 @@ form.addEventListener('submit', (e) => {
                     <hr>
                     <p class="stationHeader">Closest Station</p>
                     <hr>
-                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLDIST" aria-expanded="false" aria-controls="flush-collapseLDIST"><span class="station_name">`+ data.results.optimalStations.lowDistance.station_name + ` on ` + data.results.optimalStations.lowDistance.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowDistance.time + ` min away</span></button>
+                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLDIST" aria-expanded="false" aria-controls="flush-collapseLDIST"><span class="station_name">`+ data.results.optimalStations.lowDistance.station_name + ` on ` + data.results.optimalStations.lowDistance.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowDistance.distance + ` miles away</span></button>
                 </h2>
                 <div id="flush-collapseLDIST" class="accordion-collapse collapse" aria-labelledby="flush-headingLDIST" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
@@ -97,7 +97,7 @@ form.addEventListener('submit', (e) => {
                     <hr>
                     <p class="stationHeader">Highest Rated Station</p>
                     <hr>
-                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseHRATE" aria-expanded="false" aria-controls="flush-collapseHRATE"><span class="station_name">`+ data.results.optimalStations.maxRating.station_name + ` on ` + data.results.optimalStations.maxRating.station_street_name + `</span><span class="duration">` + data.results.optimalStations.maxRating.time + ` min away</span></button>
+                    <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseHRATE" aria-expanded="false" aria-controls="flush-collapseHRATE"><span class="station_name">`+ data.results.optimalStations.maxRating.station_name + ` on ` + data.results.optimalStations.maxRating.station_street_name + `</span><span class="duration">` + data.results.optimalStations.maxRating.station_rating + ` / 5 stars</span></button>
                 </h2>
                 <div id="flush-collapseHRATE" class="accordion-collapse collapse" aria-labelledby="flush-headingHRATE" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
