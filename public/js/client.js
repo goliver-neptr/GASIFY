@@ -12,6 +12,7 @@ form.addEventListener('submit', (e) => {
     document.getElementById('request-info').innerHTML = '';
     document.getElementById('accordionExample').innerHTML = '';
     document.getElementById('no-results').innerHTML = '';
+    document.getElementById('errorDiv').innerHTML = '';
     
     fetch(endpointURL + location).then((response) => {
     response.json().then((data) => {
@@ -19,8 +20,7 @@ form.addEventListener('submit', (e) => {
         if(data.error) {
             var errorDiv = document.createElement('div');
             errorDiv.innerHTML = data.error
-            errorDiv.style.color = 'red';
-            document.getElementById('accordionExample').appendChild(errorDiv);
+            document.getElementById('errorDiv').appendChild(errorDiv);
 
         } else {
             var clientDataDiv = document.getElementById('request-info');

@@ -130,6 +130,16 @@ body {
     text-transform: lowercase;
 }
 
+#errorDiv {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Telex', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: lowercase;
+    color: red;
+}
+
 .accordion-collapse {
     background-color: black;
     opacity: 80%;
