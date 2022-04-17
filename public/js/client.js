@@ -6,12 +6,12 @@ const inputValue = document.querySelector('input')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-            document.getElementById('accordionExample').innerHTML = '';
-    
+
     const location = inputValue.value
-    
-    var accordionDiv = document.getElementsByClassName('accordion');
-    accordionDiv.innerHTML = ''
+
+    document.getElementById('request-info').innerHTML = '';
+    document.getElementById('accordionExample').innerHTML = '';
+    document.getElementById('no-results').innerHTML = '';
     
     fetch(endpointURL + location).then((response) => {
     response.json().then((data) => {
@@ -36,7 +36,9 @@ form.addEventListener('submit', (e) => {
             optimalDiv.innerHTML = `<div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingLTIME">
-                    <span class="optimalHeader">Fastest Station</span>
+                    <hr>
+                    <p class="stationHeader">Fastest Station</p>
+                    <hr>
                     <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLTIME" aria-expanded="false" aria-controls="flush-collapseLTIME"><span class="station_name">`+ data.results.optimalStations.lowTime.station_name + ` on ` + data.results.optimalStations.lowTime.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowTime.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseLTIME" class="accordion-collapse collapse" aria-labelledby="flush-headingLTIME" data-bs-parent="#accordionFlushExample">
@@ -63,7 +65,9 @@ form.addEventListener('submit', (e) => {
             <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingLDIST">
-                    <span class="optimalHeader">Closest Station</span>
+                    <hr>
+                    <p class="stationHeader">Closest Station</p>
+                    <hr>
                     <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseLDIST" aria-expanded="false" aria-controls="flush-collapseLDIST"><span class="station_name">`+ data.results.optimalStations.lowDistance.station_name + ` on ` + data.results.optimalStations.lowDistance.station_street_name + `</span><span class="duration">` + data.results.optimalStations.lowDistance.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseLDIST" class="accordion-collapse collapse" aria-labelledby="flush-headingLDIST" data-bs-parent="#accordionFlushExample">
@@ -90,7 +94,9 @@ form.addEventListener('submit', (e) => {
             <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item my-2">
                 <h2 class="accordion-header" id="flush-headingHRATE">
-                    <span class="optimalHeader">Highest Rated Station</span>
+                    <hr>
+                    <p class="stationHeader">Highest Rated Station</p>
+                    <hr>
                     <button class="accordion-button optimal collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseHRATE" aria-expanded="false" aria-controls="flush-collapseHRATE"><span class="station_name">`+ data.results.optimalStations.maxRating.station_name + ` on ` + data.results.optimalStations.maxRating.station_street_name + `</span><span class="duration">` + data.results.optimalStations.maxRating.time + ` min away</span></button>
                 </h2>
                 <div id="flush-collapseHRATE" class="accordion-collapse collapse" aria-labelledby="flush-headingHRATE" data-bs-parent="#accordionFlushExample">
@@ -113,7 +119,9 @@ form.addEventListener('submit', (e) => {
                 </div>
             </div>
             </div>
-            <span class="optimalHeader">ALL OTHER STATIONS</span>
+            <hr>
+            <p class="stationHeader" style="font-weight: 800; text-transform: uppercase;">All Stations</p>
+            <hr>
             `
             document.getElementById('accordionExample').appendChild(optimalDiv);
 
