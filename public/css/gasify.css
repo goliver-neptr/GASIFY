@@ -178,6 +178,8 @@ body {
 .station_name {
     flex: 3;
     font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .duration {
